@@ -10,3 +10,27 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 Yirui's first message in the document
+
+Ted, collaborating.
+- load the tidyverse
+- read in the kermit data as "kermit"
+- make some side-by-side histograms of the Score.pre for all respondents, separated by the Gender column
+
+```{r}
+
+library(tidyverse)
+
+kermit <- read_csv("kermit.csv")
+
+```
+
+```{r}
+
+kermit_hist <- ggplot(kermit, aes(x = Score.pre)) +
+  geom_histogram(bins = 4) +
+  facet_wrap(~Gender)
+
+kermit_hist
+
+```
+
